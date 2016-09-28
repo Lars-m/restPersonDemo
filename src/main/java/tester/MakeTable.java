@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 public class MakeTable {
   public static void main(String[] args) {
     Persistence.generateSchema("pu", null);
-    Person p1 = new Person("Kurt","Wonnegut","1234");
+    Person p1 = new Person("æøåÆØÅ","Wonnegut","1234");
     Person p2 = new Person("Hanne","Wonnegut","1234");
     Person p3 = new Person("Jan","Wonnegut","1234");
     Person p4 = new Person("Sandra","Wonnegut","1234");

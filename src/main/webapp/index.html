@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+  <head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        
+        $("button").on("click", function(){
+           $.ajax({
+          url: "api/person",
+          type: "json",
+          method : "GET"
+        }).done(function (data) {
+            var items = "";
+            data.forEach(function(p){
+              items += "<li>"+p.firstName + " " + p.lastName +"</li>";
+            });
+            $("#persons").append(items);
+        });
+        });
+        
+        
+       
+        
+        
+        
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1>Persons</h1>
+    <button>Get Persons </button>
+    <ul id="persons"></ul>
+  </body>
 </html>

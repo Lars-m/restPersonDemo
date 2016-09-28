@@ -12,7 +12,7 @@ public interface IPersonFacade {
 
   void addEntityManagerFactory(EntityManagerFactory emf);
 
-  public Person addPerson(Person p);
+  public Person addPerson(Person p) throws Exception;
 
   public Person deletePerson(int id);
 
